@@ -5,7 +5,9 @@ app = Flask(__name__)
 # Ruta raiz
 @app.route("/")
 def index():
-    return render_template("index.html")
+    titulo = "Ay qué lindo!"
+    lista = ["footer", "header", "info"]
+    return render_template("index.html", titulo=titulo, lista=lista)
 
 
 
