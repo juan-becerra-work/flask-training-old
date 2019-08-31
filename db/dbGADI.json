@@ -1,0 +1,10 @@
+{
+    "ACDDatabase": {
+        "dbProvider": "SQLOLEDB",
+        "dbServer": "172.17.97.18",
+        "dbUser": "svcarq",
+        "dbName": "RULES",
+        "dbTableFlows": "CFG_Flows",
+        "dbTableTasks": "CFG_Tasks"
+    }
+}
