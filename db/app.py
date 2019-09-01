@@ -7,9 +7,10 @@ app = Flask(__name__)
 # Ruta raiz
 @app.route("/")
 def index():
-    titulo = "Ay qué lindo esto!"
+    titulo = "Lista de entidades"
     menuEntidades = ValueChainQueries.getEntityComponents_all(conn, 'id')
-    return render_template("index.html", titulo=titulo, lista=menuEntidades)
+    listaComponentes = ValueChainQueries.getDataComponents_all(conn)
+    return render_template("index.html", titulo=titulo, menuEntidades=menuEntidades, listaComponentes=listaComponentes)
 
 
 # Ruta query test
