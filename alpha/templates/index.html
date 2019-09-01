@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+<h1>{{ titulo }}</h1>
+
+{% block EntityMenu %}
+    <li>
+        {% for item in menuEntidades %}
+            <!-- Muestra sólo el nombre de la entidad -->
+            <ul> {{ item[0] }} </ul>
+        {% endfor %}
+    </li>
+{% endblock %}
+
+{% block content %}
+    <li>
+        {% for item in listaComponentes %}
+            <ul> {{ item[0] }} </ul>
+        {% endfor %}
+    </li>
+{% endblock %}
+
+
+</div>
