@@ -141,3 +141,4 @@ def ConnectDatabaseTest():
 
 if __name__ == '__main__':
     ConnectDatabaseTest()
+    print ('Hello from test ...')

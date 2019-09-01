@@ -1,35 +1,6 @@
 from flask import Flask, render_template
-#import dbGADI
-import test
-import GADI_lib_file
-import getpass
-
-# ----------------------------------------------
-# CONNECT TO DATABASE
-# ----------------------------------------------
-def ConnectToDatabase():
-    global conn
-    global dbUser
-    global ACDParameters
-
-    # GADI_lib_file.GetParametersFromFile()
-    ACDParameters = GADI_lib_file.GetParametersFromFile()
-
-    # Ask for database user password
-    InputMessage = "Enter password for user " + ACDParameters.get("dbUser") + \
-        " in the database " + ACDParameters.get("dbName") + "(" + \
-        ACDParameters.get("dbServer") + "): "
-    dbPassword = getpass.getpass(InputMessage)
-
-    # Connect to a SQLServer database
-    conn = test.db_connect_MSSQLSERVER(
-           ACDParameters.get("dbServer"),
-           ACDParameters.get("dbUser"),
-           dbPassword, 
-           ACDParameters.get("dbName"))
-    # ----------------------------------------------
-# ----------------------------------------------
-
+import dbGADI
+import ValueChainQueries
 
 app = Flask(__name__)
 
@@ -41,7 +12,7 @@ def index():
     return render_template("index.html", titulo=titulo, lista=lista)
 
 
-# Ruta raiz
+# Ruta query test
 @app.route("/query")
 def query():
     cu = conn.cursor
@@ -53,7 +24,18 @@ def query():
     lista = [cu.fieldnames[0], cu.fieldnames[1], cu.fieldnames[2], cu.fieldnames[3]]
     return render_template("index.html", titulo=titulo, lista=lista)
 
+@app.route("/q")
+def anotherquery():
+    titulo = "OOOOOOTRO query!"
+    lista = ValueChainQueries.getDataComponents(conn)
+    return render_template("index.html", titulo=titulo, lista=lista)
+
 
 if __name__ == "__main__":
-    ConnectToDatabase()
+
+    conn = dbGADI.ConnectToDatabase()
+    if conn == None:
+        print ('Connection to database failed. Appllication will end.')
+        exit
+
     app.run(debug=True, host="0.0.0.0")
