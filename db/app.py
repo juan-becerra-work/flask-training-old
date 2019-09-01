@@ -8,8 +8,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     titulo = "Ay qué lindo esto!"
-    lista = ["footer", "header", "info"]
-    return render_template("index.html", titulo=titulo, lista=lista)
+    menuEntidades = ValueChainQueries.getEntityComponents_all(conn, 'id')
+    return render_template("index.html", titulo=titulo, lista=menuEntidades)
 
 
 # Ruta query test
@@ -27,7 +27,8 @@ def query():
 @app.route("/q")
 def anotherquery():
     titulo = "OOOOOOTRO query!"
-    lista = ValueChainQueries.getDataComponents(conn)
+    lista = ValueChainQueries.getDataComponents_all(conn)
+    #lista = ValueChainQueries.getDataComponents_one(conn, 'doc_0000006')
     return render_template("index.html", titulo=titulo, lista=lista)
 
 
