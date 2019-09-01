@@ -1,22 +1,46 @@
 {% extends "base.html" %}
 
-<h1>{{ titulo }}</h1>
+{% block title %}
+    {{ titulo }}
+{% endblock%}
 
-{% block EntityMenu %}
-    <li>
-        {% for item in menuEntidades %}
-            <!-- Muestra sólo el nombre de la entidad -->
-            <ul> {{ item[0] }} </ul>
-        {% endfor %}
-    </li>
-{% endblock %}
+{% block siteContent %}
 
-{% block content %}
-    <li>
-        {% for item in listaComponentes %}
-            <ul> {{ item[0] }} </ul>
-        {% endfor %}
-    </li>
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sideMenuHead">GADI</h1>
+        </div>
+
+        {% from "sideMenu.html" import sideMenu %}
+        <!-- sideMenu.html -->
+
+            {{ sideMenu }}
+
+            <ul class="list-unstyled CTAs">
+                {% from "sideButtons.html" import sideButtons %}
+                <!-- sideButtons.html -->
+                {{ sideButtons }}
+            </ul>
+
+        <!-- sideMenu.html -->
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+        {% block upperNav %}
+        <!-- upperNav.html -->
+        {% endblock %}
+
+        {% block mainBody %}
+        <!-- mainBody.html -->
+        {% endblock%}
+
+    </div>
+</div>
+
+
 {% endblock %}
 
 

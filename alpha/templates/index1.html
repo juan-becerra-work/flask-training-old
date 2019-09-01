@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ titulo }}
+{% endblock%}
+
+{% block siteContent %}
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sideMenuHead">GADI</h1>
+        </div>
+
+        {% from "sideMenu1.html" import sideMenu %}
+        <!-- sideMenu.html -->
+
+        {{ sideMenu }}
+
+        <!-- sideMenu.html -->
+    </nav>
+
+</div>
+
+
+{% endblock %}
+
+
+</div>

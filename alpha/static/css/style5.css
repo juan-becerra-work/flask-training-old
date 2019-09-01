@@ -49,6 +49,12 @@ a, a:hover, a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
+.sideMenuHead{
+    color: #f78f1e;
+    text-align: center;
+    font-weight: bolder;
+}
+
 .wrapper {
     display: flex;
     width: 100%;

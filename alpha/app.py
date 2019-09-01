@@ -11,7 +11,7 @@ def index():
     menuEntidades = ValueChainQueries.getEntityComponents_all(conn, 'id')
     listaComponentes = ValueChainQueries.getDataComponents_all(conn)
     #return render_template("alpha.html", titulo=titulo, menuEntidades=menuEntidades, listaComponentes=listaComponentes)
-    return render_template("index5.html", menuEntidades=menuEntidades)
+    return render_template("index1.html", titulo=titulo, menuEntidades=menuEntidades)
 
 
 

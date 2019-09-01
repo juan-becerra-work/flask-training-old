@@ -1,1 +1,8 @@
-{% extends "base.html" %}
+{% macro entityMenu(entityName) %}
+
+<li>
+    <!-- Muestra sólo el nombre de la entidad -->
+    <a href="#"> {{ entityName }} </a>
+</li>
+
+{% endmacro %}
