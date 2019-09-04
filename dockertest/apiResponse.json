@@ -1,0 +1,65 @@
+{
+    "RuleId": "rul_0000000101",
+    "RuleVersion": "1.0.0",
+    "DeploymentDate": "2019-09-04T12:15:09.980",
+    "RuleName": "Otro test de regla para un valor",
+    "RuleDesciption": "Otro test de regla para un valor",
+    "RuleValidFrom": "2019-09-04T11:43:50.300",
+    "RuleValidTo": "(current)",
+    "RuleTypeID": "sin",
+    "RuleTypeName": "Single - The rule applies to a single attribute or expression",
+    "RuleImplementationStyleID": "val",
+    "RuleImplementationStyleName": "For a single value",
+    "Filters": [
+        [
+            {
+                "RuleItemId": "rit_0000231",
+                "RuleItemParameterGroupId": "1",
+                "RuleItemScopeId": "vl",
+                "RuleItemScopeName": "Value",
+                "RuleItemCriteriaId": "fieVal",
+                "RuleItemCriteriaName": "valor de un campo",
+                "RuleItemConditionId": "btwExc",
+                "RuleItemConditionName": "el elemento de datos está entre dos valores (exclusivo)",
+                "RuleItemParameters": [
+                    {
+                        "RuleItemParameterId": "1",
+                        "RuleItemParameterTypeId": "vin",
+                        "RuleItemParameterTypeName": "Value Integer",
+                        "DataTypeId": "int",
+                        "DataTypeName": "integer",
+                        "RuleItemParameterReferenceName": "ACD_ValueInteger01",
+                        "RuleItemParameterValues": "{ACD_InputValueInteger01}"
+                    },
+                    {
+                        "RuleItemParameterId": "2",
+                        "RuleItemParameterTypeId": "vin",
+                        "RuleItemParameterTypeName": "Value Integer",
+                        "DataTypeId": "int",
+                        "DataTypeName": "integer",
+                        "RuleItemParameterReferenceName": "ACD_ValueInteger02",
+                        "RuleItemParameterValues": "200"
+                    },
+                    {
+                        "RuleItemParameterId": "3",
+                        "RuleItemParameterTypeId": "vin",
+                        "RuleItemParameterTypeName": "Value Integer",
+                        "DataTypeId": "int",
+                        "DataTypeName": "integer",
+                        "RuleItemParameterReferenceName": "ACD_ValueInteger03",
+                        "RuleItemParameterValues": "500"
+                    },
+                    {
+                        "RuleItemParameterId": "4",
+                        "RuleItemParameterTypeId": "par",
+                        "RuleItemParameterTypeName": "Parameter Name",
+                        "DataTypeId": "txt",
+                        "DataTypeName": "Text",
+                        "RuleItemParameterReferenceName": "ACD_ParameterName04",
+                        "RuleItemParameterValues": "CantidadTransacciones"
+                    }
+                ]
+            }
+        ]
+    ]
+}
