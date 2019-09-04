@@ -1,14 +1,14 @@
-########################################################
-# DOCKER DEMO - Contenedor básico
-########################################################
-    IMPORTANTE:
-        Si se usa Windows, se requiere que los siguientes servicios estén activos y ejecutándose:
-            "HV Host Service"
-            "Hyper-V Host Compute Service"
-            "Hyper-V Virtual Machine Management"
-########################################################
-
+![GitHub Logo](./static/img/dockerlogo.png)  DOCKER DEMO - Contenedor básico
 --------------------------------------------------------
+
+**IMPORTANTE**
+Si se usa Windows, se requiere que los siguientes servicios estén activos y ejecutándose:
+- [x] HV Host Service
+- [x] Hyper-V Host Compute Service
+- [x] Hyper-V Virtual Machine Management
+--------------------------------------------------------
+
+
 CREAR EL ENTORNO DE TRABAJO PARA DOCKER
 --------------------------------------------------------
 
@@ -41,12 +41,14 @@ CONSTRUIR LA IMAGEN DE LA APLICACIÓN
 7. Desde la línea de comandos (recomendado PowerShell), situarse en la carpeta raiz de la aplicación
 
 8. Construir la imagen a partir de la carpeta actual, tomando en cuenta lo definido en los archivos Dockerfile y requirements.txt
-
+```
     docker build --tag=dockertest:0.0.1 .
+```
 
 9. Desde la línea de comandos, verificar que la imagen ha sido creada
-
+```
     docker image ls
+```
 
 
 --------------------------------------------------------
@@ -55,15 +57,16 @@ EJECUTAR LA APLICACIÓN EN UN CONTENEDOR DOCKER, BASADO EN LA IMAGEN
 
 10. Desde la línea de comandos, ejecutar la imagen (es decir, instanciar el contenedor) en la PC local
 
+```
     docker run -d -p 6000:5000 dockertest:0.0.1
+```
 
-        Verificar que el contenedor se está ejecutando: docker ps
-        Verificar que funciona desde el navegador de internet, en la dirección: http://localhost:6000
+> Verificar que el contenedor se está ejecutando: ```docker ps```
+> Verificar que funciona desde el navegador de internet, en la dirección: http://localhost:6000
 
-11. Desde la línea de comandos, , detener la ejecución del contenedor
-
-    11.a Determinar el ID del contenedor: docker image ls
-    11.b Detener el contenedor utilizando el ID: docker stop <id>
+11. Desde la línea de comandos, detener la ejecución del contenedor
+    * Determinar el ID del contenedor: ```docker image ls```
+    * Detener el contenedor utilizando el ID: ```docker stop <id>```
 
 
 --------------------------------------------------------
@@ -72,19 +75,30 @@ PUBLICAR LA IMAGEN EN EL REPOSITORIO DE DOCKER HUB
 
 12. Desde la línea de comandos, loguearse a Docker
 
+```
     docker login
+```
 
 13. Desde la línea de comandos, asignar la etiqueta con la imagen que será publicada en el repositorio de Docker Hub
 
-	docker tag dockertest:0.0.1 becerrajm/docker-test:0.0.1
-    
-        El comando genérico es: docker tag local-image:tagname reponame:tagname
+```
+    docker tag dockertest:0.0.1 becerrajm/docker-test:0.0.1
+```
+El comando genérico es: 
+```
+    docker tag local-image:tagname reponame:tagname
+```
 
 14. Desde la línea de comandos, publicar la imagen en el repositorio de Docker Hub
 
-	docker push becerrajm/docker-test:0.0.1
+```
+    docker push becerrajm/docker-test:0.0.1
+```
 
-        El comando genérico es: docker push reponame:tagname
+El comando genérico es: 
+```
+    docker push reponame:tagname
+```
 
 
 --------------------------------------------------------
@@ -92,12 +106,11 @@ EJECUTAR LA APLICACIÓN INVOCANDO LA IMAGEN EN EL REPOSITORIO DOCKER HUB
 --------------------------------------------------------
 
 15. Desde la línea de comandos, ejecutar la imagen desde el repositorio de Docker Hub
-
+```
     docker run -d -p 6000:5000 becerrajm/dockertest:0.0.1
-
-        Verificar que funciona desde el navegador de internet, en la dirección: http://localhost:6000
-
+```
+> Verificar que funciona desde el navegador de internet, en la dirección: http://localhost:6000
 
 --------------------------------------------------------
-FIN
---------------------------------------------------------
+
+> Se recomienda hacer el tutorial de la documentación oficial de Docker: https://docs.docker.com/get-started/
