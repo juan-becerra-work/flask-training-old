@@ -61,6 +61,13 @@ def index():
         DataComponentId=DataComponent.DataComponentId, 
         DataComponentName=DataComponent.DataComponentName, 
         DataComponentDescription=DataComponent.DataComponentDescription)
+
+
+@app.route("/listdatacomponents")
+def listdatacomponents():
+    DataComponents = CFG_DataComponent.query.all()
+    return render_template("listdatacomponents.html", DataComponents=DataComponents)
+
 # ------------------------------------
 
 

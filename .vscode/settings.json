@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/juan/Apps/flask-training/flask-training/flask-env/bin/python3.6",
+    "python.pythonPath": "flask\\Scripts\\python.exe",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false

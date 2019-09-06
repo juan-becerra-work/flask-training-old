@@ -65,7 +65,7 @@ EJECUTAR LA APLICACIÓN EN UN CONTENEDOR DOCKER, BASADO EN LA IMAGEN
 > Verificar que funciona desde el navegador de internet, en la dirección: http://localhost:6000
 
 11. Desde la línea de comandos, detener la ejecución del contenedor
-    * Determinar el ID del contenedor: ```docker image ls```
+    * Determinar el ID del contenedor: ```docker ps```
     * Detener el contenedor utilizando el ID: ```docker stop <id>```
 
 
@@ -107,7 +107,7 @@ EJECUTAR LA APLICACIÓN INVOCANDO LA IMAGEN EN EL REPOSITORIO DOCKER HUB
 
 15. Desde la línea de comandos, ejecutar la imagen desde el repositorio de Docker Hub
 ```
-    docker run -d -p 6000:5000 becerrajm/dockertest:0.0.1
+    docker run -d -p 6000:5000 becerrajm/docker-test:0.0.1
 ```
 > Verificar que funciona desde el navegador de internet, en la dirección: http://localhost:6000
 

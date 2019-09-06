@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="mt-2">
+            <h1 mt-2>Diccionario de datos</h1>
+        </div>
+
+        <div class="mt-2">
+            <a href="/">
+                <button type="button" class="btn btn-info"> < Volver al inicio</button>
+            </a>
+        </div>
+
+        <div class="mt-2">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Component ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for component in DataComponents %}
+                    <tr>
+                        <td> {{ component.DataComponentId }} </td>
+                        <td> {{ component.DataComponentName }} </td>
+                        <td> {{ component.DataComponentDescription }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

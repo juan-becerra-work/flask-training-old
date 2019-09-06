@@ -5,13 +5,19 @@ Home
 {% endblock %}
 
 {% block content %}
-	<div class="container">
-		<div class="mt-2">
-			<h1 mt-2>Diccionario de datos</h1>
-		</div>
-		<br>
+    <div class="container">
+        <div class="mt-2">
+            <h1 mt-2>Diccionario de datos</h1>
+        </div>
 
-		<div>
+        <div class="mt-2">
+            <a href="/listdatacomponents">
+                <button type="button" class="btn btn-info">Ver todos los componentes</button>
+            </a>
+        </div>
+
+
+        <div class="mt-2">
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
@@ -27,7 +33,7 @@ Home
 						<td> {{ DataComponentDescription }} </td>
 					</tr>
 				</tbody>
-			</table>
-		</div>
+            </table>
+        </div>
 	</div>
 {% endblock %}
