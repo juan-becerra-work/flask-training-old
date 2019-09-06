@@ -1,11 +1,33 @@
 {% extends "base.html" %}
+
 {% block title %}
 Home
 {% endblock %}
+
 {% block content %}
-<h1>Welcome!</h1>
-<form method="get" action="{{ url_for('search') }}">
-	<p><input type="text" name="nickname"></p>
-	<input type="submit" value="Search">
-</form>
+	<div class="container">
+		<div class="mt-2">
+			<h1 mt-2>Diccionario de datos</h1>
+		</div>
+		<br>
+
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Component ID</th>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td> {{ DataComponentId }} </td>
+						<td> {{ DataComponentName }} </td>
+						<td> {{ DataComponentDescription }} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 {% endblock %}
