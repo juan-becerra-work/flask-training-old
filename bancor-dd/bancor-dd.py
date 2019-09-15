@@ -54,7 +54,7 @@ class CFG_DataComponent (_AuditData, db.Model):
 # ------------------------------------
 @app.route("/")
 def index():
-    DataComponentId = "doc_0000015"
+    DataComponentId = "doc_0000012"
     DataComponent = CFG_DataComponent.query.filter_by(DataComponentId=DataComponentId).first()
     return render_template(
         "index.html", 
