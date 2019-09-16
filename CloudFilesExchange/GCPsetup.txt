@@ -1,0 +1,4 @@
+C:\Users\jbecerra4\'Google Drive (juanbecerrawork@gmail.com)'\OMNIRULES\flask-training\CloudFilesExchange\credencials\omnirules-design-project-299a9c295657.json
+
+
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\jbecerra4\'Google Drive (juanbecerrawork@gmail.com)'\OMNIRULES\flask-training\CloudFilesExchange\credencials\omnirules-design-project-299a9c295657.json"
